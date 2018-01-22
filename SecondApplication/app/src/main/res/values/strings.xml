@@ -5,4 +5,6 @@
     <string name="menu_settings">Settings</string>
     <string name="title_main_activity">My Main Activity</string>
     <string name="title_activity_display_message">My Message</string>
+    <string name="fromMessageActivityLabel">Message From Message Activity:</string>
+    <string name="fromMainActivityLabel">Message From MainActivity:</string>
 </resources>

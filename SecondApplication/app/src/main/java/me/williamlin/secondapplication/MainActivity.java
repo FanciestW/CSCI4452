@@ -6,17 +6,27 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "SecondApplication";
 
-    public final static String EXTRA_MESSAGE = "me.williamlin.secondapplication.MESSAGE";
+    public final static String EXTRA_MESSAGE = "me.williamlin.secondapplication.MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Get Message from the intent
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(DisplayMessageActivity.EXTRA_MESSAGE);
+
+        Log.d(TAG, "Got Intent");
+
+        TextView textView = (TextView)findViewById(R.id.text);
+        if(message!= null) textView.setText(message);
     }
 
     public void sendMessage(View view) {
