@@ -84,11 +84,11 @@
             android:layout_margin="5dp"
             android:text="@string/ui_profile_date_title"/>
 
-        <EditText android:id="@+id/editDate"
+        <DatePicker android:id="@+id/datePicker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="date"
-            android:hint="@string/ui_date_hint"/>
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"/>
 
         <TextView
             android:layout_width="wrap_content"

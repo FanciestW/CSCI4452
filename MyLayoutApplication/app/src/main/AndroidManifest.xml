@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".LinearLayoutActivity" />
         <activity android:name=".RelativeLayoutActivity" />
-        <activity android:name=".ScrollViewLayoutActivity"></activity>
+        <activity android:name=".ScrollViewLayoutActivity" />
+        <activity android:name=".ResultActivity"></activity>
     </application>
 
 </manifest>

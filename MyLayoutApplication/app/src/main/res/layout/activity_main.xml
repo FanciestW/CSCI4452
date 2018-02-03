@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="Linear Layout"
+        android:backgroundTint="@color/colorRed"
         android:onClick="onLinearLayoutClicked"/>
 
     <Button android:id="@+id/btnRelativeLayout"
@@ -19,6 +20,7 @@
         android:layout_margin="10dp"
         android:text="Relative Layout"
         app:layout_constraintTop_toBottomOf="@id/btnLinearLayout"
+        android:backgroundTint="@color/colorRed"
         android:onClick="onRelativeLayoutClicked"/>
 
     <Button android:id="@+id/btnScrollLayout"
@@ -27,6 +29,7 @@
         android:layout_margin="10dp"
         app:layout_constraintTop_toBottomOf="@id/btnRelativeLayout"
         android:text="ScrollView Layout"
+        android:backgroundTint="@color/colorGreen"
         android:onClick="onScrollLayoutClicked"/>
 
 </android.support.constraint.ConstraintLayout>
