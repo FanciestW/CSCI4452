@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">MyLayoutApplication</string>
+    <string name="ui_profile_name_title">Name:</string>
+    <string name="ui_profile_name_hint">Your name here</string>
+    <string name="ui_profile_email_title">Email:</string>
+    <string name="ui_profile_email_hint">Your Email here</string>
+    <string name="ui_profile_phone_title">Phone:</string>
+    <string name="ui_profile_phone_hint">Your phone number here</string>
+    <string name="ui_profile_gender_title">Gender:</string>
+    <string name="ui_profile_gender_male">Male</string>
+    <string name="ui_profile_gender_female">Female</string>
+    <string name="ui_mood_spinner_title">How are you feeling?</string>
+    <string-array name="ui_mood_entries">
+        <item>Happy</item>
+        <item>Sad</item>
+        <item>Tired</item>
+        <item>Rested</item>
+        <item>Stressed</item>
+        <item>Fair to middling</item>
+        <item>Great</item>
+    </string-array>
+    <string name="ui_button_goback_title">Go Back</string>
+
+    <string name="ui_conans_message">Your school motto is "Vox clamantis in deserto," which means "Voice crying out in the wilderness." This is easily the most pathetic school motto I have ever heard. </string>
+    <string name="ui_profile_date_title">Date:</string>
+    <string name="ui_date_hint">MM/DD/YYYY</string>
+    <string name="ui_profile_department_title">Computer Science Department</string>
+    <string name="ui_profile_cellphone_title">Cellphone</string>
+    <string name="ui_profile_demand_title">I want an A for else ;-)</string>
+    <string name="ui_button_save_title">Saved</string>
+    <string name="ui_button_cancel_title">Cancel</string>
+</resources>
