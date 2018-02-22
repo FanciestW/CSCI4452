@@ -1,10 +1,12 @@
 package me.williamlin.fourthapplication;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -15,6 +17,8 @@ import java.util.Arrays;
  */
 
 public class FirstFragment extends Fragment {
+
+    ListView.OnItemClickListener mItemClickListener;
 
     public final String NAMES[] = {"William Lin", "Brad Pitt", "Chuck Norris", "Kanye West",
             "Bill Gates", "Elon Musk", "Tony Hseih", "Larry Page", "Sergey Brin",
@@ -29,8 +33,26 @@ public class FirstFragment extends Fragment {
 
         ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, NAMES);
         ListView myListView = rootView.findViewById(R.id.listViewNames);
+
+        myListView.setOnItemClickListener(new ListView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id){
+
+            }
+        });
         myListView.setAdapter(mAdapter);
 
         return rootView;
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        // This makes sure that the container activity has implemented
+        // the callback interface. If not, it throws an exception
+        try {
+
+        }
     }
 }
