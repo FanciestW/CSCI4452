@@ -19,7 +19,12 @@
         <activity android:name=".LinearLayoutActivity" />
         <activity android:name=".RelativeLayoutActivity" />
         <activity android:name=".ScrollViewLayoutActivity" />
-        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".ListViewLayoutActivity" />
+        <activity android:name=".DateAndTimeActivity" />
+        <activity android:name=".SharedPreferenceActivity" />
+        <activity android:name=".CustomListViewLayoutActivity" />
+        <activity android:name=".SimpleListViewActivity"></activity>
     </application>
 
 </manifest>

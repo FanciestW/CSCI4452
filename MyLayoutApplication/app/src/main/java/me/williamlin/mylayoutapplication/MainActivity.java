@@ -28,4 +28,28 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onListViewLayoutClicked(View v) {
+        Intent intent = new Intent(this, ListViewLayoutActivity.class);
+        startActivity(intent);
+    }
+
+    public void onDateTimeLayoutClicked(View v) {
+        Intent intent = new Intent(this, DateAndTimeActivity.class);
+        startActivity(intent);
+    }
+
+    public void onSharedPreferencesClicked(View v) {
+        Intent intent = new Intent(this, SharedPreferenceActivity.class);
+        startActivity(intent);
+    }
+
+    public void onCustomListViewClicked(View v) {
+        Intent intent = new Intent(this, CustomListViewLayoutActivity.class);
+        startActivity(intent);
+    }
+
+    public void onSimpleListViewClicked(View v) {
+        startActivity(new Intent(this, SimpleListViewActivity.class));
+    }
+
 }

@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.user.actionbar.MainActivity">
+
+    <item
+        android:id="@+id/menuitem_search"
+        app:showAsAction="ifRoom"
+        android:title="@string/ui_menu_search">
+    </item>
+    <item
+        android:id="@+id/menuitem_send"
+        android:title="@string/ui_menu_send">
+    </item>
+    <item
+        android:id="@+id/menuitem_add"
+        android:title="@string/ui_menu_add">
+    </item>
+    <item
+        android:id="@+id/menuitem_share"
+        android:title="@string/ui_menu_share">
+    </item>
+    <item
+        android:id="@+id/menuitem_feedback"
+        android:title="@string/ui_menu_feedback">
+    </item>
+    <item
+        android:id="@+id/menuitem_about"
+        android:title="@string/ui_menu_about">
+    </item>
+    <item
+        android:id="@+id/menuitem_quit"
+        android:title="@string/ui_menu_quit">
+    </item>
+
+</menu>

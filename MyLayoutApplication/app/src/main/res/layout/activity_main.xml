@@ -29,7 +29,53 @@
         android:layout_margin="10dp"
         app:layout_constraintTop_toBottomOf="@id/btnRelativeLayout"
         android:text="ScrollView Layout"
-        android:backgroundTint="@color/colorGreen"
+        android:backgroundTint="@color/colorRed"
         android:onClick="onScrollLayoutClicked"/>
+
+    <Button android:id="@+id/btnListViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnScrollLayout"
+        android:text="ListView Layout"
+        android:backgroundTint="@color/colorRed"
+        android:onClick="onListViewLayoutClicked"/>
+
+    <Button android:id="@+id/btnDateTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/btnListViewLayout"
+        android:text="Date and Time"
+        android:backgroundTint="@color/colorRed"
+        android:onClick="onDateTimeLayoutClicked"/>
+
+    <Button android:id="@+id/btnSharedPreferences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/btnDateTime"
+        android:text="Shared Preferences"
+        android:backgroundTint="@color/colorRed"
+        android:onClick="onSharedPreferencesClicked"/>
+
+    <Button android:id="@+id/btnCustomListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnSharedPreferences"
+        android:text="Custom ListView Layout"
+        android:backgroundTint="@color/colorGreen"
+        android:onClick="onCustomListViewClicked"/>
+
+    <Button android:id="@+id/btnSimpleListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnCustomListView"
+        android:text="Simple ListView Layout"
+        android:backgroundTint="@color/colorGreen"
+        android:onClick="onSimpleListViewClicked"/>
+
 
 </android.support.constraint.ConstraintLayout>

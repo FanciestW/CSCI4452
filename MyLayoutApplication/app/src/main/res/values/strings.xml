@@ -29,4 +29,8 @@
     <string name="ui_profile_demand_title">I want an A for else ;-)</string>
     <string name="ui_button_save_title">Saved</string>
     <string name="ui_button_cancel_title">Cancel</string>
+    <string name="cancel_message">Cancelled</string>
+    <string name="preference_name">save_preference</string>
+    <string name="preference_key_profile_email">email_preference</string>
+    <string name="preference_key_profile_gender">gender_preference</string>
 </resources>
