@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FifthApplication</string>
+
+    <string-array name="descriptions">
+        <item>Introduction</item>
+        <item>Intents</item>
+        <item>User Interface I</item>
+        <item>User Interface II</item>
+        <item>Fragments</item>
+    </string-array>
+</resources>

@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="me.williamlin.fragmentactivity.MainActivity">
+
+    <item android:id="@+id/menuitem_font10"
+        android:title="Font 10"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/menuitem_font50"
+        android:title="Font 50"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+</menu>
