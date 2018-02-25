@@ -22,15 +22,6 @@ public class MainActivity extends AppCompatActivity implements Comm {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     @Override
@@ -43,7 +34,8 @@ public class MainActivity extends AppCompatActivity implements Comm {
     @Nullable
     @Override
     public void onButtonClick(int size, String text) {
-
+        TextFragment text_fragment = (TextFragment)getFragmentManager().findFragmentById(R.id.fragment2);
+        text_fragment.changeTextProperties(fontsize, text);
     }
 
 

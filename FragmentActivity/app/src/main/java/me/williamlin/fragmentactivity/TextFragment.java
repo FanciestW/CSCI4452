@@ -26,7 +26,9 @@ public class TextFragment extends Fragment {
     }
 
     public void changeTextProperties(int fontsize, String text){
-           //. . .
+        TextView textView = (TextView)getView().findViewById(R.id.textView1);
+        textView.setTextSize(fontsize);
+        textView.setText(text);
     }
 }
 

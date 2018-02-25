@@ -41,16 +41,11 @@ public class FirstFragment extends Fragment {
         final Button button = (Button) view.findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                buttonClicked(v);
-
+                activityCallback.onButtonClick(10, edittext.getText().toString());
             }
         });
 
         return view;
-    }
-
-    void buttonClicked(View v){
-        //. . .
     }
 }
 
