@@ -7,6 +7,18 @@
         android:title="Font 10"
         app:showAsAction="never" />
 
+    <item android:id="@+id/menuitem_font20"
+        android:title="Font 20"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/menuitem_font30"
+        android:title="Font 30"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/menuitem_font40"
+        android:title="Font 40"
+        app:showAsAction="never" />
+
     <item android:id="@+id/menuitem_font50"
         android:title="Font 50"
         app:showAsAction="never" />

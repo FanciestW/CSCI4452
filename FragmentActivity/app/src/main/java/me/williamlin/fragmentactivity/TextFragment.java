@@ -25,10 +25,15 @@ public class TextFragment extends Fragment {
         return view;
     }
 
-    public void changeTextProperties(int fontsize, String text){
+    public void changeTextProperties(int fontsize, String text) {
         TextView textView = (TextView)getView().findViewById(R.id.textView1);
         textView.setTextSize(fontsize);
         textView.setText(text);
+    }
+
+    public void changeTextProperties(int fontsize) {
+        TextView textView = (TextView)getView().findViewById(R.id.textView1);
+        textView.setTextSize(fontsize);
     }
 }
 
