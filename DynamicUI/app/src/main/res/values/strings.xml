@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">DynamicUI</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string-array name="description">
+        <item>Introduction</item>
+        <item>Intents in Android</item>
+        <item>User Interface</item>
+        <item>Fragments</item>
+        <item>Manage Fragmnets Dymanically</item>
+    </string-array>
+
+    <string-array name="urls">
+        <item>https://developer.android.com/guide/index.html</item>
+        <item>https://developer.android.com/reference/android/content/Intent.html</item>
+        <item>https://developer.android.com/guide/topics/ui/declaring-layout.html</item>
+        <item>https://developer.android.com/reference/android/app/Fragment.html</item>
+        <item>http://www.vogella.com/tutorials/AndroidFragments/article.html</item>
+    </string-array>
+</resources>
