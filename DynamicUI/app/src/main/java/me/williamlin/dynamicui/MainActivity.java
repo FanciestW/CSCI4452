@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity implements Communicator {
 
@@ -54,7 +55,13 @@ public class MainActivity extends AppCompatActivity implements Communicator {
         bundle.putInt("url", position);
         webFragment.setArguments(bundle);
         // Continue
-        Log.d("Caught", "Got it");
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.fragment_container, webFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+        ToggleButton btn = findViewById(R.id.button1);
+        btn.setChecked(false);
     }
 
     void portraitMode() {
@@ -82,9 +89,20 @@ public class MainActivity extends AppCompatActivity implements Communicator {
     }
 
     public void listToggle(View view) {
-        VerticalFragment verticalFragment = (VerticalFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-        //verticalFragment.toggleList();
-        callFragment(verticalFragment);
+        ToggleButton button = (ToggleButton)findViewById(R.id.button1);
+        LinksListFragment fragment = new LinksListFragment();
+
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        if (button.isChecked()){
+            transaction.add(R.id.fragment_container, fragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        } else {
+            transaction.remove(fragment);
+            transaction.commit();
+            manager.popBackStack();
+        }
     }
 
     void callFragment(Fragment fragment) {
