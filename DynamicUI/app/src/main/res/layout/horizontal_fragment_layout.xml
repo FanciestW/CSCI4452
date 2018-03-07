@@ -4,17 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-    <fragment android:id="@+id/list_fragment"
-        android:name="me.williamlin.dynamicui.LinksListFragment"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="2"/>
-
     <fragment android:id="@+id/text_fragment"
         android:name="me.williamlin.dynamicui.TextFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="3"/>
+        android:layout_weight="2"/>
 
     <fragment android:id="@+id/web_fragment"
         android:name="me.williamlin.dynamicui.WebFragment"

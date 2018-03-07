@@ -1,11 +1,13 @@
 package me.williamlin.dynamicui;
 
+import android.support.v4.app.FragmentManager;
 import android.content.res.Configuration;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements Communicator {
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
         bundle.putInt("url", position);
         webFragment.setArguments(bundle);
         // Continue
+        Log.d("Caught", "Got it");
     }
 
     void portraitMode() {
@@ -59,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
         Bundle args = new Bundle();
         secondFragment.setArguments(args);
 
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, secondFragment);
         transaction.addToBackStack(null);
         transaction.commit();
@@ -71,15 +74,21 @@ public class MainActivity extends AppCompatActivity implements Communicator {
         Bundle args = new Bundle();
         firstFragment.setArguments(args);
 
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, firstFragment);
         transaction.addToBackStack(null);
         transaction.commit();
         Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
     }
 
+    public void listToggle(View view) {
+        VerticalFragment verticalFragment = (VerticalFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        //verticalFragment.toggleList();
+        callFragment(verticalFragment);
+    }
+
     void callFragment(Fragment fragment) {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
