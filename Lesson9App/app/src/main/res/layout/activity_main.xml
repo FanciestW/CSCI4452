@@ -11,6 +11,13 @@
         android:layout_alignParentTop="true"
         android:text="Download Image" />
 
+    <Button android:id="@+id/MyButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/MyButton"
+        android:text="Download Text"/>
+
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="350dp"
@@ -22,7 +29,13 @@
         android:id="@+id/text_file"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@id/MyButton"
+        android:layout_below="@id/imageView1"
+        android:lines="10"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="insideOverlay"
+        android:fadeScrollbars="true"
+        android:fadingEdge="vertical"
+        android:padding="10dp"
         android:text="The caption"/>
 
 </RelativeLayout>
