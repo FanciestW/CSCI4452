@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SensorApplication</string>
+
+    <string name="light">Light Sensor</string>
+    <string name="pressure">Pressure Sensor</string>
+    <string name="temperature">Temperature Sensor</string>
+</resources>
