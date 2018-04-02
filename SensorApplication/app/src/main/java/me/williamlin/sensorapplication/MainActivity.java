@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listview;
     List<String> liststring ;
     List<Sensor> sensors;
-    ArrayAdapter<String> adapter ;
+    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                if(position == 3){
+                if (position == 0) {
+                    startActivity(new Intent(getApplicationContext(), LightActivity.class));
+                } else if (position == 1) {
+                    startActivity(new Intent(getApplicationContext(), TemperatureActivity.class));
+                } else if (position == 2) {
+
+                } else if(position == 3){
                     startActivity(new Intent(getApplicationContext(), ShakeActivity.class));
                 } else if(position == 4){
                     startActivity(new Intent(getApplicationContext(), SensorActivity.class));
