@@ -43,14 +43,22 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 if (position == 0) {
-                    startActivity(new Intent(getApplicationContext(), LightActivity.class));
+                    Intent intent = new Intent(getApplicationContext(), SensorResultActivity.class);
+                    intent.putExtra("sensor", 0);
+                    startActivity(intent);
                 } else if (position == 1) {
-                    startActivity(new Intent(getApplicationContext(), TemperatureActivity.class));
+                    Intent intent = new Intent(getApplicationContext(), SensorResultActivity.class);
+                    intent.putExtra("sensor", 1);
+                    startActivity(intent);
                 } else if (position == 2) {
-
-                } else if(position == 3){
-                    startActivity(new Intent(getApplicationContext(), ShakeActivity.class));
+                    Intent intent = new Intent(getApplicationContext(), SensorResultActivity.class);
+                    intent.putExtra("sensor", 2);
+                    startActivity(intent);
+                } else if (position == 3) {
+                    startActivity(new Intent(getApplicationContext(), MotionActivity.class));
                 } else if(position == 4){
+                    startActivity(new Intent(getApplicationContext(), ShakeActivity.class));
+                } else if(position == 5){
                     startActivity(new Intent(getApplicationContext(), SensorActivity.class));
                 } else {
                     Toast.makeText(MainActivity.this, liststring.get(position), Toast.LENGTH_SHORT).show();

@@ -22,7 +22,10 @@
         <activity android:name=".PressureMeasurement" />
         <activity android:name=".TemperatureMeasurement" />
         <activity android:name=".LightActivity" />
-        <activity android:name=".TemperatureActivity"></activity>
+        <activity android:name=".TemperatureActivity" />
+        <activity android:name=".PressureActivity" />
+        <activity android:name=".MotionActivity" />
+        <activity android:name=".SensorResultActivity"></activity>
     </application>
 
 </manifest>
