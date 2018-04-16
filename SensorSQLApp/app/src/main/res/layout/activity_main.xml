@@ -61,17 +61,20 @@
         <Button android:id="@+id/insertButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Insert"/>
+            android:text="Insert"
+            android:onClick="onInsertClick"/>
 
         <Button android:id="@+id/deleteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Delete"/>
+            android:text="Delete"
+            android:onClick="onDeleteClick"/>
 
         <Button android:id="@+id/retrieveAllButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Retrieve All"/>
+            android:text="Retrieve All"
+            android:onClick="onRetrieveAll"/>
 
     </LinearLayout>
 
