@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onInsertClick(View view) {
-        db.execSQL("INSERT INTO data VALUES ('" + x + "," + y + "," + z + ")");
+        db.execSQL("INSERT INTO data VALUES ('" + x + "','" + y + "','" + z + "')");
     }
 
     public void onDeleteClick(View view) {
@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
 
         StringBuffer buffer = new StringBuffer();
         while(c.moveToNext()) {
-            buffer.append("x: " + c.getString(0) + "\n");
-            buffer.append("y: " + c.getString(1) + "\n");
+            buffer.append("x: " + c.getString(0) + "\t\t");
+            buffer.append("y: " + c.getString(1) + "\t\t");
             buffer.append("z: " + c.getString(2) + "\n");
         }
         scrollText.setText(buffer.toString());
