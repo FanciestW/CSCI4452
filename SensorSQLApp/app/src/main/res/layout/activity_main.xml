@@ -76,6 +76,12 @@
             android:text="Retrieve All"
             android:onClick="onRetrieveAll"/>
 
+        <Button android:id="@+id/deleteAllButton"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Delete All"
+            android:onClick="onDeleteAll"/>
+
     </LinearLayout>
 
     <TextView android:id="@+id/scrollTextView"

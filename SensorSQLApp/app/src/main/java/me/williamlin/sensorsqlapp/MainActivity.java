@@ -1,12 +1,15 @@
 package me.williamlin.sensorsqlapp;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
+import android.os.AsyncTask;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onInsertClick(View view) {
+        getDataClick(getCurrentFocus());
         db.execSQL("INSERT INTO data VALUES ('" + x + "','" + y + "','" + z + "')");
     }
 
@@ -67,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onRetrieveAll(View view) {
-        String query = "SELECT * FROM data LIMIT 1000";
+        String query = "SELECT rowid, * FROM data LIMIT 1000";
         Cursor c = db.rawQuery(query, null);
         if(c.getCount() == 0) {
             scrollText.setText("No Records");
@@ -76,10 +80,39 @@ public class MainActivity extends AppCompatActivity {
 
         StringBuffer buffer = new StringBuffer();
         while(c.moveToNext()) {
-            buffer.append("x: " + c.getString(0) + "\t\t");
-            buffer.append("y: " + c.getString(1) + "\t\t");
-            buffer.append("z: " + c.getString(2) + "\n");
+            buffer.append(c.getString(0) + "\t\t");
+            buffer.append("x: " + c.getString(1) + "\t\t");
+            buffer.append("y: " + c.getString(2) + "\t\t");
+            buffer.append("z: " + c.getString(3) + "\n");
         }
         scrollText.setText(buffer.toString());
+    }
+
+    public void onDeleteAll(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Everything will be gone!").setTitle("Delete All Data?");
+
+        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                db.execSQL("DELETE FROM data");
+                dialogInterface.dismiss();
+            }
+        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        builder.create().show();
+    }
+
+    private class AsyncDB extends AsyncTask<Integer, Integer, Integer> {
+
+        protected Integer doInBackground(Integer... params) {
+            return 0;
+        }
+
     }
 }
