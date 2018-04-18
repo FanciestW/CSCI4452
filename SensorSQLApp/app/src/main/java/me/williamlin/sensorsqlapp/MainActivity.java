@@ -13,14 +13,17 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.InputType;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView xvalueTxt, yvalueTxt, zvalueTxt, scrollText;
-    float x ,y ,z = 0;
+    String x ,y ,z = "0";
     SQLiteDatabase db;
 
     @Override
@@ -36,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         scrollText.setMovementMethod(new ScrollingMovementMethod());
 
         db = openOrCreateDatabase("SensorDB", Context.MODE_PRIVATE, null);
-        db.execSQL("CREATE TABLE IF NOT EXISTS data(x REAL, y REAL, z REAL);");
+        db.execSQL("CREATE TABLE IF NOT EXISTS data(x TEXT, y TEXT, z TEXT);");
     }
 
     public void getDataClick(View view) {
@@ -50,13 +53,14 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode == 0) {
             if(resultCode == RESULT_OK) {
                 float[] values = data.getFloatArrayExtra(AccelerometerMeasurement.EXTRA_RESPONSE);
-                xvalueTxt.setText(Html.fromHtml(values[0] + "m/s<sup>2</sup>"));
-                yvalueTxt.setText(Html.fromHtml(values[1] + "m/s<sup>2</sup>"));
-                zvalueTxt.setText(Html.fromHtml(values[2] + "m/s<sup>2</sup>"));
 
-                x = values[0];
-                y = values[1];
-                z = values[2];
+                x = String.format ("%,.2f", values[0]);
+                y = String.format ("%,.2f", values[1]);
+                z = String.format ("%,.2f", values[2]);
+
+                xvalueTxt.setText(Html.fromHtml(x + "m/s<sup>2</sup>"));
+                yvalueTxt.setText(Html.fromHtml(y + "m/s<sup>2</sup>"));
+                zvalueTxt.setText(Html.fromHtml(z + "m/s<sup>2</sup>"));
             }
         }
     }
@@ -67,7 +71,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onDeleteClick(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete Data by ID");
 
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_NUMBER);
+        builder.setView(input);
+
+        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                try {
+                    String id = input.getText().toString();
+                    db.execSQL("DELETE FROM data WHERE rowid = " + id + ";");
+                } catch (Exception e) {
+                    Log.d("Exception Caught", e.getMessage());
+                }
+            }
+        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        builder.create().show();
     }
 
     public void onRetrieveAll(View view) {
@@ -106,13 +134,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
         builder.create().show();
-    }
-
-    private class AsyncDB extends AsyncTask<Integer, Integer, Integer> {
-
-        protected Integer doInBackground(Integer... params) {
-            return 0;
-        }
-
     }
 }
